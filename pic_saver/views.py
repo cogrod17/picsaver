@@ -7,7 +7,7 @@ from .models import Image
 from rest_framework.generics import GenericAPIView
 
 
-class UploadImage(GenericAPIView):
+class ImageView(GenericAPIView):
     queryset = Image.objects.all()
     permission_classes= [IsAuthenticated]
     parser_classes =[MultiPartParser, FormParser]

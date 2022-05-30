@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import UploadImage
+from .views import ImageView
 from rest_framework.routers import DefaultRouter
 
 # router = DefaultRouter()
@@ -7,5 +7,5 @@ from rest_framework.routers import DefaultRouter
 
 urlpatterns=[
     # path('image/', include(router.urls))
-    path('image/', UploadImage.as_view(), name='upload-image')
+    path('image/', ImageView.as_view(), name='upload-image')
 ]

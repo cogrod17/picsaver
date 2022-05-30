@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pic_saver.urls')),
     path('users/', include('users.urls')),
+    path('posts/', include('posts.urls')),
     path('auth/', include('authentication.urls') ),
     path('', include_docs_urls(title='API')),
     
