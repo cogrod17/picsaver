@@ -4,7 +4,6 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 
-# User = settings.AUTH_USER_MODEL
 User = get_user_model()
 
 def upload_to(instance, filename):

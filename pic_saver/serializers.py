@@ -6,3 +6,4 @@ class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
         fields = ('image', 'date_uploaded')
+
