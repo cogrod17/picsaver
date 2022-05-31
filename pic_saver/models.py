@@ -12,7 +12,7 @@ def upload_to(instance, filename):
 class Image(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='image')
     image = models.ImageField(_('image'), upload_to=upload_to)
-    date_uploaded = models.DateTimeField(default=timezone.now)
+    date_uploaded = models.DateTimeField(auto_now_add=True)
     
 
     def __str__(self):
