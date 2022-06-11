@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "state";
+import { store } from "state/store/store";
 
 // import { configureStore } from "@reduxjs/toolkit";
 // import { applyMiddleware, compose } from "redux";

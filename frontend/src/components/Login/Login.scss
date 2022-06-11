@@ -1,0 +1,27 @@
+@use "../../App";
+
+.login {
+  &-wrap {
+    align-self: center;
+    height: 700px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-header {
+    align-self: flex-start;
+    margin-bottom: -20px;
+  }
+  &-form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  &-submit-button {
+    width: 150px;
+  }
+}

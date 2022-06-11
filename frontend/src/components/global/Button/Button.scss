@@ -1,0 +1,20 @@
+@use "../../../App.scss";
+
+.button {
+  cursor: pointer;
+  font-family: App.$fontSecondary;
+  font-weight: 400;
+  letter-spacing: 0.22rem;
+  height: 35px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  text-transform: uppercase;
+
+  //   color: #fff;
+
+  //   &:hover {
+  //     background-color: rgb(0, 0, 0);
+  //   }
+}
