@@ -3,6 +3,7 @@ import { Input, Button } from "components/global";
 import "./Login.scss";
 import { AppDispatch } from "state";
 import { useAppDispatch } from "hooks";
+import { login } from "state/slices/auth/actions";
 
 export const Login = () => {
   const dispatch: AppDispatch = useAppDispatch();
@@ -10,7 +11,9 @@ export const Login = () => {
   return (
     <div className="login-wrap">
       <Form
-        onSubmit={(v) => console.log(v)}
+        onSubmit={(v) =>
+          dispatch(login({ username: v?.username, password: v?.password }))
+        }
         initialValues={{}}
         render={({ handleSubmit }) => (
           <form className="login-form" onSubmit={handleSubmit}>

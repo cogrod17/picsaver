@@ -1,6 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { wait } from "@testing-library/user-event/dist/utils";
 import { setUser } from "../user";
+
+import axios from "axios";
+
+const API_URL = "http://localhost:8000";
+
+type ServerData = {};
+
+interface RequestModel {
+  method: "get" | "post" | "patch" | "put" | "delete";
+  endpoint: string;
+  body?: {};
+}
+
+const request = async ({ method, endpoint, body }: RequestModel) => {
+  return await axios[method](`${API_URL}/${endpoint}`, { ...body });
+};
 
 export interface LoginModel {
   username: string;
@@ -10,8 +25,13 @@ export interface LoginModel {
 export const login = createAsyncThunk(
   "auth/login",
   async (data: LoginModel, { dispatch }) => {
-    await wait(3000);
-    dispatch(setUser({ id: 17, username: "cole", email: "amdaf" }));
-    return { refresh: "3qewgasdiovn", access: "qiounbvapoisdu" };
+    const res = await request({
+      method: "post",
+      endpoint: "auth/login/",
+      body: data,
+    });
+    const { user, ...tokens } = res.data;
+    dispatch(setUser(user));
+    return tokens;
   }
 );
