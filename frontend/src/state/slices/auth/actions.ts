@@ -1,21 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setUser } from "../user";
-
-import axios from "axios";
-
-const API_URL = "http://localhost:8000";
-
-type ServerData = {};
-
-interface RequestModel {
-  method: "get" | "post" | "patch" | "put" | "delete";
-  endpoint: string;
-  body?: {};
-}
-
-const request = async ({ method, endpoint, body }: RequestModel) => {
-  return await axios[method](`${API_URL}/${endpoint}`, { ...body });
-};
+import { request } from "api";
 
 export interface LoginModel {
   username: string;

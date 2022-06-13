@@ -10,7 +10,6 @@ export const store = configureStore({
     user: userReducer,
     auth: authReducer,
   },
-  // middleware: [thunkMiddleware],
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(thunkMiddleware),
   devTools: process.env.NODE_ENV !== "production",
