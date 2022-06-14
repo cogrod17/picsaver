@@ -1,12 +1,14 @@
 import { Form } from "react-final-form";
 import { Input, Button } from "components/global";
 import "./Login.scss";
-import { AppDispatch } from "state";
-import { useAppDispatch } from "hooks";
-import { login } from "state/slices/auth/actions";
+import { AppDispatch, authSelector } from "state";
+import { useAppDispatch, useAppSelector } from "hooks";
+import { login } from "state";
+import { useEffect } from "react";
 
 export const Login = () => {
-  const dispatch: AppDispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
+  const { data, loading, error } = useAppSelector(authSelector);
 
   return (
     <div className="login-wrap">
