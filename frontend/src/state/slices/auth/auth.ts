@@ -35,6 +35,7 @@ export const authSlice = createSlice({
         state.loading = true;
       })
       .addCase(login.rejected, (state) => {
+        state.loading = false;
         state.error = "There was an error";
       });
   },

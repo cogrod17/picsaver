@@ -1,0 +1,29 @@
+@use "../../../App";
+
+.spinner {
+  &-wrap {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+
+  &-inner {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: #fff solid 5px;
+    border-bottom: transparent solid 5px;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

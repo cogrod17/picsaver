@@ -1,14 +1,16 @@
 import { Form } from "react-final-form";
 import { Input, Button } from "components/global";
 import "./Login.scss";
-import { AppDispatch, authSelector } from "state";
+import { authSelector } from "state";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { login } from "state";
-import { useEffect } from "react";
+import Spinner from "components/global/Spinner/Spinner";
 
 export const Login = () => {
   const dispatch = useAppDispatch();
-  const { data, loading, error } = useAppSelector(authSelector);
+  const { loading, error } = useAppSelector(authSelector);
+
+  if (loading) return <Spinner />;
 
   return (
     <div className="login-wrap">
@@ -27,6 +29,9 @@ export const Login = () => {
               text="login"
               type="submit"
             />
+            {error && (
+              <div className="login-error">Invalid Email or Username</div>
+            )}
           </form>
         )}
       ></Form>
