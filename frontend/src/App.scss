@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Quattrocento&display=swap");
+///
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@200;400&family=Quattrocento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@200;400&family=Quattrocento&display=swap");
 
 * {
   padding: 0;
@@ -9,8 +12,10 @@
 }
 
 $background: rgb(0, 0, 0, 0.9);
-$fontPrimary: Montserrat, open-sans;
-$fontSecondary: Oswald, sans-serif;
+// $fontPrimary: Montserrat, open-sans;
+$fontPrimary: Archivo-Black, open-sans;
+// $fontSecondary: Oswald, sans-serif;
+$fontSecondary: Roboto, sans-serif;
 $fontLato: Lato, sans-serif;
 
 body {

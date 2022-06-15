@@ -9,9 +9,8 @@ $inputBorder: solid 1px rgb(255, 255, 255, 0.3);
   width: 100%;
   height: 50px;
   label {
-    text-transform: uppercase;
     font-weight: bolder;
-    letter-spacing: 0.2rem;
+    font-family: App.$fontPrimary;
   }
   input {
     border: $inputBorder;

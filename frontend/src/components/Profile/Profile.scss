@@ -1,0 +1,29 @@
+@use "../../App.scss";
+
+.profile {
+  &-wrap {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-head {
+    border-left: blue solid 1px;
+    border-right: blue solid 1px;
+    max-height: 300px;
+    height: 25%;
+    display: flex;
+    align-items: center;
+  }
+  &-slider {
+    border-left: green solid 1px;
+    border-right: green solid 1px;
+    max-height: 50px;
+    height: 5%;
+  }
+  &-content {
+    border-left: red solid 1px;
+    border-right: red solid 1px;
+    flex-grow: 1;
+  }
+}
