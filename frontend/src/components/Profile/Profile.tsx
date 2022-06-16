@@ -8,8 +8,13 @@ export const Profile = () => {
 
   return (
     <div className="profile-wrap">
-      <div className="profile-head">{data?.username}</div>
-      <div className="profile-slider"></div>
+      <div className="profile-head">
+        <span>{data?.username}</span>
+      </div>
+      <div className="profile-slider">
+        <span>Images</span>
+        <span>Posts</span>
+      </div>
       <div className="profile-content"></div>
     </div>
   );
