@@ -1,6 +1,6 @@
 import { Form } from "react-final-form";
 import { Input, Button } from "components/global";
-import "./Login.scss";
+// import "./Login.scss";
 import { authSelector } from "state";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { login } from "state";
@@ -13,7 +13,7 @@ export const Login = () => {
   if (loading) return <Spinner />;
 
   return (
-    <div className="login-wrap">
+    <div className="flex content-center justify-center self-center min-w-[500px]">
       <Form
         onSubmit={(v) =>
           dispatch(login({ username: v?.username, password: v?.password }))

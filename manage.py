@@ -18,5 +18,10 @@ def main():
     execute_from_command_line(sys.argv)
 
 
+'''
+activate env command:
+source /Users/cole/Environments/django_env/bin/activate
+'''
+
 if __name__ == '__main__':
     main()
