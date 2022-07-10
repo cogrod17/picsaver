@@ -1,13 +1,14 @@
 import { UserModel } from "models/redux-models";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { checkSession } from "utils/session";
 
 const initalUserState: UserModel = {
   error: null,
   loading: false,
-  data: { id: null, username: null, email: null },
+  data: checkSession()?.user || { id: null, username: null, email: null },
 };
 
-type UserDataModel = {
+export type UserDataModel = {
   id: number | null;
   username: string | null;
   email: string | null;

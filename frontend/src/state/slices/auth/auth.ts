@@ -1,13 +1,14 @@
 import { AuthModel } from "models/redux-models";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { login, LoginModel } from "./actions";
+import { login } from "./actions";
+import { checkSession } from "utils/session";
 
 const initAuth: AuthModel = {
   loading: false,
   error: null,
   data: {
-    refresh: null,
-    access: null,
+    refresh: checkSession()?.refresh || null,
+    access: checkSession()?.access || null,
   },
 };
 

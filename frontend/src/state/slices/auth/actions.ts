@@ -1,11 +1,16 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { setUser } from "../user";
+import { setUser, UserDataModel } from "../user";
 import { request } from "api";
+import { SessionData } from "models/redux-models";
 
 export interface LoginModel {
   username: string;
   password: string;
 }
+
+const saveSession = (data: SessionData) => {
+  localStorage.setItem("session", JSON.stringify(data));
+};
 
 export const login = createAsyncThunk(
   "auth/login",
@@ -16,6 +21,7 @@ export const login = createAsyncThunk(
       body: data,
     });
     const { user, ...tokens } = res.data;
+    saveSession(res.data);
     dispatch(setUser(user));
     return tokens;
   }

@@ -10,3 +10,9 @@ export interface UserModel extends ReduxFields {
 export interface AuthModel extends ReduxFields {
   data: { refresh: string | null; access: string | null };
 }
+
+export interface SessionData {
+  user: { username: string | null; email: string | null; id: number | null };
+  refresh: string | null;
+  access: string | null;
+}
