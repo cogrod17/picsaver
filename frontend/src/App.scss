@@ -5,6 +5,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@200;400&family=Quattrocento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@200;400&family=Quattrocento&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   padding: 0;
   margin: 0;
